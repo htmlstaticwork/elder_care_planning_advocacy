@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elder Care - Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon" style="width:56px;height:56px;margin:0 auto 12px;font-size:1.5rem;">🏠</div>
+        <h2>Create Account</h2>
+        <p style="color:var(--text-muted);font-size:.9rem;margin-top:4px;">Join ElderCare and start your care journey</p>
+      </div>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+            <button type="button" class="password-toggle">👁️</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="password-wrap">
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+            <button type="button" class="password-toggle">👁️</button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Register</button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Login</a>
+      </div>
+
+      <div style="text-align:center;margin-top:16px;">
+        <button class="icon-btn dark-toggle" style="display:inline-flex;">🌙</button>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
