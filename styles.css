@@ -405,10 +405,10 @@ textarea.form-control { resize:vertical; min-height:120px; }
   .stats-grid { grid-template-columns:1fr; gap:24px; }
   .pricing-card.featured { transform:none; }
   .pricing-card.featured:hover { transform:translateY(-4px); }
-  .footer-grid { grid-template-columns:1fr; text-align:center; }
-  .footer-grid .logo { justify-content:center; }
-  .footer-social { justify-content:center; }
-  .footer-links li { display:inline-block; margin:0 10px 10px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; text-align: center; }
+  .footer-grid .logo { justify-content: center; }
+  .footer-social { justify-content: center; }
+  .footer-links li { display: block; margin: 0 0 8px; }
   .mock-cards { grid-template-columns:1fr; }
   .sidebar { transform:translateX(-100%); }
   .sidebar.open { transform:translateX(0); }
@@ -416,11 +416,14 @@ textarea.form-control { resize:vertical; min-height:120px; }
   .topbar { padding:16px; }
   .dash-content { padding:16px; }
   .dash-cards { grid-template-columns:1fr; }
+  .form-row { flex-wrap: nowrap; gap: 8px; font-size: 0.8rem; }
+  .form-row > *, .auth-footer { white-space: nowrap; }
+  .checkbox-wrap { gap: 4px; }
 }
 
 @media(max-width:768px) {
-  .grid-3 { grid-template-columns:1fr; }
-  .grid-4 { grid-template-columns:repeat(2,1fr); gap:16px; }
+  .grid-3, .grid-4, .steps, .footer-grid { grid-template-columns: 1fr; }
+  .grid-4 { gap: 16px; }
 }
 
 /* ===== RTL ===== */
