@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
       showToast('Login successful! Redirecting...');
-      setTimeout(() => window.location.href = 'dashboard.html', 1500);
+      setTimeout(() => window.location.href = 'user-dashboard.html', 1500);
     });
   }
 

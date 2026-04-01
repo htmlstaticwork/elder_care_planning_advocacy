@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elder Care - User Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <a href="index.html" class="logo"><div class="logo-icon">🏠</div>ElderCare</a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="user-dashboard.html" class="active"><span class="nav-icon">👤</span> User Dashboard</a>
+        <a href="admin-dashboard.html"><span class="nav-icon">🛡️</span> Admin Dashboard</a>
+        <a href="care-plans.html"><span class="nav-icon">📋</span> Care Plans</a>
+        <a href="#"><span class="nav-icon">📅</span> Appointments</a>
+        <a href="#"><span class="nav-icon">📚</span> Resources</a>
+        <a href="#"><span class="nav-icon">💬</span> Messages</a>
+        <a href="#"><span class="nav-icon">⚙️</span> Settings</a>
+        <a href="index.html" class="logout"><span class="nav-icon">🚪</span> Logout</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="dash-main">
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="icon-btn sidebar-toggle" style="display:none;">☰</button>
+          <h2>Welcome back, Surya 👋</h2>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-btn" title="Notifications" style="position:relative;">
+            🔔
+            <span style="position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#EF4444;border-radius:50;"></span>
+          </button>
+          <button class="icon-btn" title="Profile">👤</button>
+          <button class="icon-btn dark-toggle" title="Dark Mode">🌙</button>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="dash-content">
+        <!-- STAT CARDS -->
+        <div class="dash-cards">
+          <div class="dash-card animate">
+            <div class="card-label">Total Care Plans</div>
+            <div class="card-value">12</div>
+            <div class="card-change">↑ 3 this month</div>
+          </div>
+          <div class="dash-card animate">
+            <div class="card-label">Upcoming Appointments</div>
+            <div class="card-value">5</div>
+            <div class="card-change">Next: Tomorrow 10 AM</div>
+          </div>
+          <div class="dash-card animate">
+            <div class="card-label">Active Tasks</div>
+            <div class="card-value">28</div>
+            <div class="card-change">7 due today</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- RECENT ACTIVITIES -->
+          <div class="dash-section animate">
+            <h3>Recent Activities</h3>
+            <div class="activity-item">
+              <div class="activity-dot"></div>
+              <div class="activity-text">
+                <p>Updated medication schedule for Mom</p>
+                <span>2 hours ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot info"></div>
+              <div class="activity-text">
+                <p>New care plan "Daily Routine" created</p>
+                <span>5 hours ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot warning"></div>
+              <div class="activity-text">
+                <p>Appointment reminder: Dr. Patel - Cardiology</p>
+                <span>Yesterday</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot"></div>
+              <div class="activity-text">
+                <p>Family member Priya joined the care team</p>
+                <span>2 days ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot info"></div>
+              <div class="activity-text">
+                <p>Monthly health report generated</p>
+                <span>3 days ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- UPCOMING APPOINTMENTS -->
+          <div class="dash-section animate">
+            <h3>Upcoming Medical Appointments</h3>
+            <div class="activity-item">
+              <div class="activity-dot warning"></div>
+              <div class="activity-text">
+                <p><strong>Dr. Patel</strong> — Cardiology Check-up</p>
+                <span>Tomorrow, 10:00 AM</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot"></div>
+              <div class="activity-text">
+                <p><strong>Dr. Wilson</strong> — General Physician</p>
+                <span>Apr 3, 2:30 PM</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot info"></div>
+              <div class="activity-text">
+                <p><strong>Dr. Santos</strong> — Physical Therapy</p>
+                <span>Apr 5, 11:00 AM</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot"></div>
+              <div class="activity-text">
+                <p><strong>Lab Work</strong> — Blood Panel</p>
+                <span>Apr 8, 9:00 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTES / REMINDERS -->
+        <div class="dash-section animate">
+          <h3>Notes & Reminders</h3>
+          <div class="grid-3">
+            <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--secondary);">
+              <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">💊 Medication Note</h4>
+              <p style="font-size:.85rem;">Increase evening dose of BP medication per Dr. Patel's advice starting April 1.</p>
+            </div>
+            <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--accent);">
+              <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">📋 Care Plan Update</h4>
+              <p style="font-size:.85rem;">Review and update dietary restrictions by end of this week. Add new allergies.</p>
+            </div>
+            <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--primary);">
+              <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">👨‍👩‍👧 Family Meeting</h4>
+              <p style="font-size:.85rem;">Schedule a family video call to discuss upcoming surgery and recovery plan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Show sidebar toggle on mobile
+    if (window.innerWidth <= 768) {
+      const sidebarToggle = document.querySelector('.sidebar-toggle');
+      if (sidebarToggle) sidebarToggle.style.display = 'flex';
+    }
+    window.addEventListener('resize', () => {
+      const sidebarToggle = document.querySelector('.sidebar-toggle');
+      if (sidebarToggle) sidebarToggle.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+    });
+  </script>
+</body>
+</html>
