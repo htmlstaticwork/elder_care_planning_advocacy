@@ -200,6 +200,43 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // === Dashboard Navigation ===
+  const sidebarLinks = document.querySelectorAll('.sidebar-nav a[data-section]');
+  const dashSections = document.querySelectorAll('.dash-section-content');
+  
+  if (sidebarLinks.length && dashSections.length) {
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetSectionId = link.getAttribute('data-section');
+        const targetSection = document.getElementById(targetSectionId);
+        
+        if (targetSection) {
+          // Update active link
+          sidebarLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+          
+          // Update visible section
+          dashSections.forEach(s => s.classList.remove('active'));
+          targetSection.classList.add('active');
+
+          // Update Topbar Title
+          const topbarTitle = document.querySelector('.topbar-title');
+          if (topbarTitle) {
+            topbarTitle.textContent = link.textContent.trim().replace(/[^\w\s]/gi, '');
+          }
+
+          // Close sidebar on mobile
+          const sidebar = document.querySelector('.sidebar');
+          const hamburger = document.querySelector('.hamburger');
+          if (sidebar && window.innerWidth <= 991) {
+            sidebar.classList.remove('open');
+          }
+        }
+      });
+    });
+  }
 });
 
 // === Toast Notification ===

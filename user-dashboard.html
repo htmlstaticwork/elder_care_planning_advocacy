@@ -15,13 +15,13 @@
         <a href="index.html" class="logo"><div class="logo-icon">🏠</div>ElderCare</a>
       </div>
       <nav class="sidebar-nav">
-        <a href="user-dashboard.html" class="active"><span class="nav-icon">👤</span> User Dashboard</a>
+        <a href="javascript:void(0)" class="active" data-section="overview"><span class="nav-icon">👤</span> User Dashboard</a>
         <a href="admin-dashboard.html"><span class="nav-icon">🛡️</span> Admin Dashboard</a>
         <a href="care-plans.html"><span class="nav-icon">📋</span> Care Plans</a>
-        <a href="#"><span class="nav-icon">📅</span> Appointments</a>
-        <a href="#"><span class="nav-icon">📚</span> Resources</a>
-        <a href="#"><span class="nav-icon">💬</span> Messages</a>
-        <a href="#"><span class="nav-icon">⚙️</span> Settings</a>
+        <a href="javascript:void(0)" data-section="appointments"><span class="nav-icon">📅</span> Appointments</a>
+        <a href="javascript:void(0)" data-section="resources"><span class="nav-icon">📚</span> Resources</a>
+        <a href="javascript:void(0)" data-section="messages"><span class="nav-icon">💬</span> Messages</a>
+        <a href="javascript:void(0)" data-section="settings"><span class="nav-icon">⚙️</span> Settings</a>
         <a href="index.html" class="logout"><span class="nav-icon">🚪</span> Logout</a>
       </nav>
     </aside>
@@ -31,13 +31,13 @@
       <!-- TOPBAR -->
       <div class="topbar">
         <div style="display:flex;align-items:center;gap:12px;">
-          <button class="icon-btn sidebar-toggle" style="display:none;">☰</button>
-          <h2 class="topbar-title">Welcome back 👋</h2>
+          <button class="icon-btn sidebar-toggle" title="Menu" style="display:none;">☰</button>
+          <h2 class="topbar-title">Overview</h2>
         </div>
         <div class="topbar-actions">
           <button class="icon-btn" title="Notifications" style="position:relative;">
             🔔
-            <span style="position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#EF4444;border-radius:50;"></span>
+            <span style="position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#EF4444;border-radius:50%;"></span>
           </button>
           <button class="icon-btn" title="Profile">👤</button>
           <button class="icon-btn dark-toggle" title="Dark Mode">🌙</button>
@@ -46,115 +46,228 @@
 
       <!-- CONTENT -->
       <div class="dash-content">
-        <!-- STAT CARDS -->
-        <div class="dash-cards">
-          <div class="dash-card animate">
-            <div class="card-label">Total Care Plans</div>
-            <div class="card-value">12</div>
-            <div class="card-change">↑ 3 this month</div>
-          </div>
-          <div class="dash-card animate">
-            <div class="card-label">Upcoming Appointments</div>
-            <div class="card-value">5</div>
-            <div class="card-change">Next: Tomorrow 10 AM</div>
-          </div>
-          <div class="dash-card animate">
-            <div class="card-label">Active Tasks</div>
-            <div class="card-value">28</div>
-            <div class="card-change">7 due today</div>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <!-- RECENT ACTIVITIES -->
-          <div class="dash-section animate">
-            <h3>Recent Activities</h3>
-            <div class="activity-item">
-              <div class="activity-dot"></div>
-              <div class="activity-text">
-                <p>Updated medication schedule for Mom</p>
-                <span>2 hours ago</span>
-              </div>
+        <!-- OVERVIEW SECTION -->
+        <div id="overview" class="dash-section-content active">
+          <div class="dash-cards">
+            <div class="dash-card animate">
+              <div class="card-label">Total Care Plans</div>
+              <div class="card-value">12</div>
+              <div class="card-change">↑ 3 this month</div>
             </div>
-            <div class="activity-item">
-              <div class="activity-dot info"></div>
-              <div class="activity-text">
-                <p>New care plan "Daily Routine" created</p>
-                <span>5 hours ago</span>
-              </div>
+            <div class="dash-card animate">
+              <div class="card-label">Upcoming Appointments</div>
+              <div class="card-value">5</div>
+              <div class="card-change">Next: Tomorrow 10 AM</div>
             </div>
-            <div class="activity-item">
-              <div class="activity-dot warning"></div>
-              <div class="activity-text">
-                <p>Appointment reminder: Dr. Patel - Cardiology</p>
-                <span>Yesterday</span>
-              </div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-dot"></div>
-              <div class="activity-text">
-                <p>Family member Priya joined the care team</p>
-                <span>2 days ago</span>
-              </div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-dot info"></div>
-              <div class="activity-text">
-                <p>Monthly health report generated</p>
-                <span>3 days ago</span>
-              </div>
+            <div class="dash-card animate">
+              <div class="card-label">Active Tasks</div>
+              <div class="card-value">28</div>
+              <div class="card-change">7 due today</div>
             </div>
           </div>
 
-          <!-- UPCOMING APPOINTMENTS -->
-          <div class="dash-section animate">
-            <h3>Upcoming Medical Appointments</h3>
-            <div class="activity-item">
-              <div class="activity-dot warning"></div>
-              <div class="activity-text">
-                <p><strong>Dr. Patel</strong> — Cardiology Check-up</p>
-                <span>Tomorrow, 10:00 AM</span>
+          <div class="grid-2">
+            <div class="dash-section animate">
+              <h3>Recent Activities</h3>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-text">
+                  <p>Updated medication schedule for Mom</p>
+                  <span>2 hours ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot info"></div>
+                <div class="activity-text">
+                  <p>New care plan "Daily Routine" created</p>
+                  <span>5 hours ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot warning"></div>
+                <div class="activity-text">
+                  <p>Appointment reminder: Dr. Patel - Cardiology</p>
+                  <span>Yesterday</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-text">
+                  <p>Family member Priya joined the care team</p>
+                  <span>2 days ago</span>
+                </div>
               </div>
             </div>
-            <div class="activity-item">
-              <div class="activity-dot"></div>
-              <div class="activity-text">
-                <p><strong>Dr. Wilson</strong> — General Physician</p>
-                <span>Apr 3, 2:30 PM</span>
+
+            <div class="dash-section animate">
+              <h3>Notes & Reminders</h3>
+              <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--secondary);margin-bottom:16px;">
+                <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">💊 Medication Note</h4>
+                <p style="font-size:.85rem;">Increase evening dose of BP medication per Dr. Patel's advice starting April 1.</p>
               </div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-dot info"></div>
-              <div class="activity-text">
-                <p><strong>Dr. Santos</strong> — Physical Therapy</p>
-                <span>Apr 5, 11:00 AM</span>
-              </div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-dot"></div>
-              <div class="activity-text">
-                <p><strong>Lab Work</strong> — Blood Panel</p>
-                <span>Apr 8, 9:00 AM</span>
+              <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--accent);">
+                <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">📋 Care Plan Update</h4>
+                <p style="font-size:.85rem;">Review and update dietary restrictions by end of this week. Add new allergies.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- NOTES / REMINDERS -->
-        <div class="dash-section animate">
-          <h3>Notes & Reminders</h3>
-          <div class="grid-3">
-            <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--secondary);">
-              <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">💊 Medication Note</h4>
-              <p style="font-size:.85rem;">Increase evening dose of BP medication per Dr. Patel's advice starting April 1.</p>
+        <!-- APPOINTMENTS SECTION -->
+        <div id="appointments" class="dash-section-content">
+          <div class="dash-section">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+              <h3 style="margin:0;">Schedule & Appointments</h3>
+              <button class="btn btn-primary" style="padding:10px 20px;font-size:0.85rem;">+ New Appointment</button>
             </div>
-            <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--accent);">
-              <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">📋 Care Plan Update</h4>
-              <p style="font-size:.85rem;">Review and update dietary restrictions by end of this week. Add new allergies.</p>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Doctor / Service</th>
+                    <th>Specialty</th>
+                    <th>Date & Time</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Dr. Anita Patel</strong></td>
+                    <td>Cardiology</td>
+                    <td>Apr 4, 10:00 AM</td>
+                    <td><span class="status warning">Upcoming</span></td>
+                    <td><button class="btn btn-secondary" style="padding:6px 12px;font-size:0.75rem;">Reschedule</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dr. James Wilson</strong></td>
+                    <td>General Physician</td>
+                    <td>Apr 8, 2:30 PM</td>
+                    <td><span class="status warning">Upcoming</span></td>
+                    <td><button class="btn btn-secondary" style="padding:6px 12px;font-size:0.75rem;">Reschedule</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>City Health Lab</strong></td>
+                    <td>Blood Test</td>
+                    <td>Mar 28, 9:00 AM</td>
+                    <td><span class="status success">Completed</span></td>
+                    <td><button class="btn btn-secondary" style="padding:6px 12px;font-size:0.75rem;">View Results</button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div style="background:var(--bg-alt);padding:20px;border-radius:var(--radius);border-left:4px solid var(--primary);">
-              <h4 style="font-size:.95rem;font-family:var(--font);margin-bottom:8px;">👨‍👩‍👧 Family Meeting</h4>
-              <p style="font-size:.85rem;">Schedule a family video call to discuss upcoming surgery and recovery plan.</p>
+          </div>
+        </div>
+
+        <!-- RESOURCES SECTION -->
+        <div id="resources" class="dash-section-content">
+          <div class="dash-section">
+            <h3>Caregiving Resource Library</h3>
+            <p style="margin-bottom:24px;">Essential guides and documents for elder care planning.</p>
+            <div class="grid-3">
+              <div class="resource-card">
+                <div style="padding:24px;border:1px solid var(--border);border-radius:var(--radius);">
+                  <span style="font-size:2rem;display:block;margin-bottom:12px;">📄</span>
+                  <h4 style="margin-bottom:8px;">Medication Tracker PDF</h4>
+                  <p style="font-size:0.85rem;margin-bottom:16px;">Download our printable medication schedule template.</p>
+                  <a href="#" class="btn btn-secondary btn-full" style="padding:8px;">Download</a>
+                </div>
+              </div>
+              <div class="resource-card">
+                <div style="padding:24px;border:1px solid var(--border);border-radius:var(--radius);">
+                  <span style="font-size:2rem;display:block;margin-bottom:12px;">🥗</span>
+                  <h4 style="margin-bottom:8px;">Elder Nutrition Guide</h4>
+                  <p style="font-size:0.85rem;margin-bottom:16px;">Comprehensive guide on balanced diets for elderly health.</p>
+                  <a href="#" class="btn btn-secondary btn-full" style="padding:8px;">Read Online</a>
+                </div>
+              </div>
+              <div class="resource-card">
+                <div style="padding:24px;border:1px solid var(--border);border-radius:var(--radius);">
+                  <span style="font-size:2rem;display:block;margin-bottom:12px;">⚖️</span>
+                  <h4 style="margin-bottom:8px;">Legal Checklist</h4>
+                  <p style="font-size:0.85rem;margin-bottom:16px;">Essential legal documents every caregiver should have ready.</p>
+                  <a href="#" class="btn btn-secondary btn-full" style="padding:8px;">View Checklist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MESSAGES SECTION -->
+        <div id="messages" class="dash-section-content">
+          <div class="dash-section">
+            <h3>Care Team Messages</h3>
+            <div class="message-list">
+              <div class="message-item">
+                <div class="message-info">
+                  <div class="message-header">
+                    <span class="message-name">Dr. Anita Patel</span>
+                    <span class="message-time">10:45 AM</span>
+                  </div>
+                  <p class="message-snippet">The latest lab results look good. We'll discuss them during your appointment tomorrow.</p>
+                </div>
+              </div>
+              <div class="message-item">
+                <div class="message-info">
+                  <div class="message-header">
+                    <span class="message-name">Priya (Family)</span>
+                    <span class="message-time">Yesterday</span>
+                  </div>
+                  <p class="message-snippet">I'll be taking Mom to the clinic on Friday. Does anyone need to join?</p>
+                </div>
+              </div>
+              <div class="message-item">
+                <div class="message-info">
+                  <div class="message-header">
+                    <span class="message-name">System Support</span>
+                    <span class="message-time">2 days ago</span>
+                  </div>
+                  <p class="message-snippet">Your monthly care report is now ready for download in the Reports section.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS SECTION -->
+        <div id="settings" class="dash-section-content">
+          <div class="dash-section">
+            <h3>Account Settings</h3>
+            
+            <div class="settings-group">
+              <h4>Profile Information</h4>
+              <div class="settings-item">
+                <div class="settings-label">
+                  <div>Public Name</div>
+                  <p>How you appear to your care team</p>
+                </div>
+                <button class="btn btn-secondary" style="padding:8px 16px;font-size:0.8rem;">Edit</button>
+              </div>
+              <div class="settings-item">
+                <div class="settings-label">
+                  <div>Email Address</div>
+                  <p>your.name@example.com</p>
+                </div>
+                <button class="btn btn-secondary" style="padding:8px 16px;font-size:0.8rem;">Change</button>
+              </div>
+            </div>
+
+            <div class="settings-group">
+              <h4>Notifications</h4>
+              <div class="settings-item">
+                <div class="settings-label">
+                  <div>Email Notifications</div>
+                  <p>Receive daily summaries of care activities</p>
+                </div>
+                <input type="checkbox" checked id="emailNotify" title="Email Notifications" style="width:20px;height:20px;">
+              </div>
+              <div class="settings-item">
+                <div class="settings-label">
+                  <div>Appointment Reminders</div>
+                  <p>SMS alerts 24 hours before scheduled visits</p>
+                </div>
+                <input type="checkbox" checked id="smsNotify" title="Appointment Reminders" style="width:20px;height:20px;">
+              </div>
             </div>
           </div>
         </div>
