@@ -213,20 +213,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === Dashboard Navigation ===
-  const sidebarLinks = document.querySelectorAll('.sidebar-nav a[data-section]');
+  const dashboardLinks = document.querySelectorAll('.sidebar-nav a[data-section], .dropdown-menu a[data-section]');
   const dashSections = document.querySelectorAll('.dash-section-content');
   
-  if (sidebarLinks.length && dashSections.length) {
-    sidebarLinks.forEach(link => {
+  if (dashboardLinks.length && dashSections.length) {
+    dashboardLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetSectionId = link.getAttribute('data-section');
         const targetSection = document.getElementById(targetSectionId);
         
         if (targetSection) {
-          // Update active link
-          sidebarLinks.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
+          // Update active link in sidebar
+          document.querySelectorAll('.sidebar-nav a[data-section]').forEach(l => l.classList.remove('active'));
+          const sidebarLink = document.querySelector(`.sidebar-nav a[data-section="${targetSectionId}"]`);
+          if (sidebarLink) sidebarLink.classList.add('active');
           
           // Update visible section
           dashSections.forEach(s => s.classList.remove('active'));
@@ -235,12 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
           // Update Topbar Title
           const topbarTitle = document.querySelector('.topbar-title');
           if (topbarTitle) {
-            topbarTitle.textContent = link.textContent.trim().replace(/[^\w\s]/gi, '');
+            topbarTitle.textContent = (sidebarLink || link).textContent.trim().replace(/[^\w\s]/gi, '');
           }
 
           // Close sidebar on mobile
           const sidebar = document.querySelector('.sidebar');
-          const hamburger = document.querySelector('.hamburger');
           if (sidebar && window.innerWidth <= 991) {
             sidebar.classList.remove('open');
           }
